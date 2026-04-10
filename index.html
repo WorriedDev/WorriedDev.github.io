@@ -1,114 +1,143 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BookTAL</title>
+<title>BookTAL</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: black;
-            color: white;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: black;
+    color: white;
+    overflow-x: hidden;
+}
 
-        /* NAVBAR */
-        .navbar {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            z-index: 2;
-        }
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
 
-        .logo {
-            font-size: 26px;
-            font-weight: bold;
-        }
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
 
-        .nav-buttons a {
-            margin-left: 20px;
-            padding: 10px 20px;
-            border: 1px solid rgba(255,255,255,0.4);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 14px;
-            transition: 0.2s;
-        }
+.nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+}
 
-        .nav-buttons a:hover {
-            background: rgba(255,255,255,0.2);
-        }
+.nav a:hover {
+    opacity: 1;
+}
 
-        /* HERO */
-        .hero {
-            height: 100vh;
-            background: 
-                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+/* HERO */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), black),
                 url("https://images.unsplash.com/photo-1504198266285-165a1c66c7c2");
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-        .hero h1 {
-            font-size: 64px;
-            margin: 0;
-        }
+/* GLITCH SECTION */
+.glitch {
+    height: 120vh;
+    position: relative;
+    overflow: hidden;
+}
 
-        .hero p {
-            font-size: 18px;
-            margin-top: 10px;
-            opacity: 0.8;
-        }
+.layer {
+    position: absolute;
+    width: 120%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0.3;
+    animation: float 10s infinite alternate;
+}
 
-        .main-btn {
-            margin-top: 25px;
-            background: #7b2cbf;
-            padding: 14px 35px;
-            border-radius: 25px;
-            text-decoration: none;
-            color: white;
-            font-size: 16px;
-            transition: 0.2s;
-        }
+.layer:nth-child(1) {
+    background-image: url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb");
+    transform: rotate(2deg);
+}
 
-        .main-btn:hover {
-            background: #9d4edd;
-            transform: scale(1.05);
-        }
+.layer:nth-child(2) {
+    background-image: url("https://images.unsplash.com/photo-1491553895911-0055eca6402d");
+    transform: rotate(-3deg);
+}
 
-    </style>
+.layer:nth-child(3) {
+    background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+    transform: rotate(1deg);
+}
+
+@keyframes float {
+    from { transform: translateY(0) scale(1); }
+    to { transform: translateY(-40px) scale(1.05); }
+}
+
+/* CONTENT */
+.content {
+    padding: 100px;
+    text-align: center;
+}
+
+/* BUTTON */
+.btn {
+    background: #7b2cbf;
+    padding: 15px 40px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #9d4edd;
+}
+</style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
-    <div class="logo">Tri Airlines</div>
-
-    <div class="nav-buttons">
+    <div class="logo">BookTAL</div>
+    <div class="nav">
         <a href="#">My Account</a>
-        <a href="#">Book Flight</a>
+        <a href="#">Book</a>
         <a href="#">Discord</a>
     </div>
 </div>
 
-<!-- HERO -->
 <div class="hero">
     <h1>Your trip starts here</h1>
     <p>Experience Tri Airlines</p>
+    <a class="btn" href="#">Book Flight</a>
+</div>
 
-    <a class="main-btn" href="https://www.roblox.com/games/YOURGAMEID">
-        Book Flight
-    </a>
+<div class="glitch">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+</div>
+
+<div class="content">
+    <h2>Experience the future of travel</h2>
+    <p>Tri Airlines delivers a next-generation airline experience.</p>
 </div>
 
 </body>
