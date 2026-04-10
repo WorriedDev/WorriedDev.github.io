@@ -6,15 +6,49 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial;
+            font-family: Arial, sans-serif;
             background: black;
             color: white;
         }
 
+        /* NAVBAR */
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            z-index: 2;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .nav-buttons a {
+            margin-left: 20px;
+            padding: 10px 20px;
+            border: 1px solid rgba(255,255,255,0.4);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .nav-buttons a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* HERO */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(43,10,61,0.9)),
-                        url("https://images.unsplash.com/photo-1504198266285-165a1c66c7c2");
+            background: 
+                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+                url("https://images.unsplash.com/photo-1504198266285-165a1c66c7c2");
             background-size: cover;
             background-position: center;
             display: flex;
@@ -24,80 +58,57 @@
             text-align: center;
         }
 
-        h1 {
-            font-size: 70px;
+        .hero h1 {
+            font-size: 64px;
             margin: 0;
         }
 
-        p {
-            font-size: 20px;
-            opacity: 0.8;
-            margin-top: 10px;
-        }
-
-        .btn {
-            margin-top: 30px;
-            background: #7b2cbf;
-            padding: 15px 40px;
-            border-radius: 30px;
-            color: white;
-            text-decoration: none;
+        .hero p {
             font-size: 18px;
-            transition: 0.3s;
+            margin-top: 10px;
+            opacity: 0.8;
         }
 
-        .btn:hover {
+        .main-btn {
+            margin-top: 25px;
+            background: #7b2cbf;
+            padding: 14px 35px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        .main-btn:hover {
             background: #9d4edd;
             transform: scale(1.05);
         }
 
-        .section {
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .fleet {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .card {
-            background: #111;
-            padding: 30px;
-            border-radius: 15px;
-            width: 200px;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            background: #1a1a1a;
-        }
     </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">Tri Airlines</div>
+
+    <div class="nav-buttons">
+        <a href="#">My Account</a>
+        <a href="#">Book Flight</a>
+        <a href="#">Discord</a>
+    </div>
+</div>
+
+<!-- HERO -->
 <div class="hero">
     <h1>Your trip starts here</h1>
     <p>Experience Tri Airlines</p>
 
-    <a class="btn" href="https://discord.gg/FxbTBPnWFR>
+    <a class="main-btn" href="https://www.roblox.com/games/YOURGAMEID">
         Book Flight
     </a>
-</div>
-
-<div class="section">
-    <h2>Our Fleet</h2>
-
-    <div class="fleet">
-        <div class="card">Boeing 787-10</div>
-        <div class="card">Boeing 737-800</div>
-        <div class="card">Dash-8 Q400</div>
-    </div>
 </div>
 
 </body>
